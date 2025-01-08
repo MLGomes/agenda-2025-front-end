@@ -1,0 +1,8 @@
+.schedule {
+    padding: var(--spacing);
+  }
+  
+  .schedule h2 {
+    color: var(--primary-color);
+  }
+  
