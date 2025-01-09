@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import ReactInputMask from "react-input-mask";
 import Button from "../../components/Button/Button";
 
 function Home() {
@@ -53,19 +54,20 @@ function Home() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="whatsapp" className="form-label">
-                WhatsApp:
-              </label>
-              <input
-                type="tel"
-                className="form-control"
-                id="whatsapp"
-                name="whatsapp"
-                value={formData.whatsapp}
-                onChange={handleChange}
-                required
-              />
-            </div>
+  <label htmlFor="whatsapp" className="form-label">
+    WhatsApp:
+  </label>
+  <ReactInputMask
+    mask="(99) 99999-9999"
+    className="form-control"
+    name="whatsapp"
+    value={formData.whatsapp}
+    onChange={(e) =>
+      setFormData({ ...formData, whatsapp: e.target.value })
+    }
+    required
+  />
+</div>
 
             <div className="mb-3">
               <label htmlFor="date" className="form-label">
